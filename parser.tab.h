@@ -54,50 +54,60 @@ extern int yydebug;
     YYEOF = 0,                     /* "end of file"  */
     YYerror = 256,                 /* error  */
     YYUNDEF = 257,                 /* "invalid token"  */
-    INT = 258,                     /* INT  */
-    RETURN = 259,                  /* RETURN  */
-    MAIN = 260,                    /* MAIN  */
-    PRINTF = 261,                  /* PRINTF  */
-    SCANF = 262,                   /* SCANF  */
-    FOR = 263,                     /* FOR  */
-    IF = 264,                      /* IF  */
-    ELSE = 265,                    /* ELSE  */
-    WHILE = 266,                   /* WHILE  */
-    IDENTIFIER = 267,              /* IDENTIFIER  */
-    NUMBER = 268,                  /* NUMBER  */
-    PLUS = 269,                    /* PLUS  */
-    MINUS = 270,                   /* MINUS  */
-    MULT = 271,                    /* MULT  */
-    DIV = 272,                     /* DIV  */
-    MOD = 273,                     /* MOD  */
-    ASSIGN = 274,                  /* ASSIGN  */
-    LPAREN = 275,                  /* LPAREN  */
-    RPAREN = 276,                  /* RPAREN  */
-    LBRACE = 277,                  /* LBRACE  */
-    RBRACE = 278,                  /* RBRACE  */
-    SEMI = 279,                    /* SEMI  */
-    LE = 280,                      /* LE  */
-    GT = 281,                      /* GT  */
-    EQ = 282,                      /* EQ  */
-    OR = 283,                      /* OR  */
-    COMMA = 284,                   /* COMMA  */
-    INCR = 285                     /* INCR  */
+    TYPE_SPEC = 258,               /* TYPE_SPEC  */
+    THEN = 259,                    /* THEN  */
+    INT = 260,                     /* INT  */
+    FLOAT = 261,                   /* FLOAT  */
+    BOOL = 262,                    /* BOOL  */
+    RETURN = 263,                  /* RETURN  */
+    VOID = 264,                    /* VOID  */
+    MAIN = 265,                    /* MAIN  */
+    PRINTF = 266,                  /* PRINTF  */
+    SCANF = 267,                   /* SCANF  */
+    FOR = 268,                     /* FOR  */
+    IF = 269,                      /* IF  */
+    ELSE = 270,                    /* ELSE  */
+    WHILE = 271,                   /* WHILE  */
+    SWITCH = 272,                  /* SWITCH  */
+    CASE = 273,                    /* CASE  */
+    TRUE = 274,                    /* TRUE  */
+    FALSE = 275,                   /* FALSE  */
+    BREAK = 276,                   /* BREAK  */
+    DEFAULT = 277,                 /* DEFAULT  */
+    STRING = 278,                  /* STRING  */
+    IDENTIFIER = 279,              /* IDENTIFIER  */
+    NUMBER = 280,                  /* NUMBER  */
+    PLUS = 281,                    /* PLUS  */
+    MINUS = 282,                   /* MINUS  */
+    MULT = 283,                    /* MULT  */
+    DIV = 284,                     /* DIV  */
+    MOD = 285,                     /* MOD  */
+    ASSIGN = 286,                  /* ASSIGN  */
+    LPAREN = 287,                  /* LPAREN  */
+    RPAREN = 288,                  /* RPAREN  */
+    LBRACE = 289,                  /* LBRACE  */
+    RBRACE = 290,                  /* RBRACE  */
+    SEMI = 291,                    /* SEMI  */
+    LE = 292,                      /* LE  */
+    LT = 293,                      /* LT  */
+    GT = 294,                      /* GT  */
+    GE = 295,                      /* GE  */
+    EQ = 296,                      /* EQ  */
+    NEQ = 297,                     /* NEQ  */
+    OR = 298,                      /* OR  */
+    AND = 299,                     /* AND  */
+    NOT = 300,                     /* NOT  */
+    COMMA = 301,                   /* COMMA  */
+    INCR = 302,                    /* INCR  */
+    DECR = 303,                    /* DECR  */
+    COLON = 304                    /* COLON  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-union YYSTYPE
-{
-#line 23 "parser.y"
-
-    char* str;
-
-#line 98 "parser.tab.h"
-
-};
-typedef union YYSTYPE YYSTYPE;
+typedef int YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
 #endif

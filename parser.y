@@ -200,6 +200,9 @@ arg_list_opt:
     | arg_list { printf("Expanding rule: arg_list_opt → arg_list (line %d)\n", yylineno); }
     ;
 
+arg_list:
+    expr { printf("Expanding rule: arg_list → expr (line %d)\n", yylineno); }
+    | arg_list COMMA expr { printf("Expanding rule: arg_list → arg_list COMMA expr (line %d)\n", yylineno); }
     ;
 
 %%
@@ -219,9 +222,6 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     yyin = file;
-    
-    printf("####### Starting parsing #######\n");
-    
     int result = yyparse();
     fclose(file);
     if (result == 0) {

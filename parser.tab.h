@@ -35,8 +35,8 @@
    especially those whose name start with YY_ or yy_.  They are
    private implementation details that can be changed or removed.  */
 
-#ifndef YY_YY_Y_TAB_H_INCLUDED
-# define YY_YY_Y_TAB_H_INCLUDED
+#ifndef YY_YY_PARSER_TAB_H_INCLUDED
+# define YY_YY_PARSER_TAB_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -54,63 +54,47 @@ extern int yydebug;
     YYEOF = 0,                     /* "end of file"  */
     YYerror = 256,                 /* error  */
     YYUNDEF = 257,                 /* "invalid token"  */
-    NUMBER = 258,                  /* NUMBER  */
-    IDENTIFIER = 259,              /* IDENTIFIER  */
-    INT = 260,                     /* INT  */
-    RETURN = 261,                  /* RETURN  */
-    PRINTF = 262,                  /* PRINTF  */
-    MAIN = 263,                    /* MAIN  */
-    LBRACE = 264,                  /* LBRACE  */
-    RBRACE = 265,                  /* RBRACE  */
-    SEMICOLON = 266,               /* SEMICOLON  */
-    ASSIGN = 267,                  /* ASSIGN  */
-    PLUS = 268,                    /* PLUS  */
-    MULTIPLY = 269,                /* MULTIPLY  */
-    LPAREN = 270,                  /* LPAREN  */
-    RPAREN = 271,                  /* RPAREN  */
-    QUOTE = 272,                   /* QUOTE  */
-    NEWLINE = 273,                 /* NEWLINE  */
-    PERCENT = 274,                 /* PERCENT  */
-    D = 275,                       /* D  */
-    PREPROCESSOR_DIRECTIVE = 276   /* PREPROCESSOR_DIRECTIVE  */
+    INT = 258,                     /* INT  */
+    RETURN = 259,                  /* RETURN  */
+    MAIN = 260,                    /* MAIN  */
+    PRINTF = 261,                  /* PRINTF  */
+    SCANF = 262,                   /* SCANF  */
+    FOR = 263,                     /* FOR  */
+    IF = 264,                      /* IF  */
+    ELSE = 265,                    /* ELSE  */
+    WHILE = 266,                   /* WHILE  */
+    IDENTIFIER = 267,              /* IDENTIFIER  */
+    NUMBER = 268,                  /* NUMBER  */
+    PLUS = 269,                    /* PLUS  */
+    MINUS = 270,                   /* MINUS  */
+    MULT = 271,                    /* MULT  */
+    DIV = 272,                     /* DIV  */
+    MOD = 273,                     /* MOD  */
+    ASSIGN = 274,                  /* ASSIGN  */
+    LPAREN = 275,                  /* LPAREN  */
+    RPAREN = 276,                  /* RPAREN  */
+    LBRACE = 277,                  /* LBRACE  */
+    RBRACE = 278,                  /* RBRACE  */
+    SEMI = 279,                    /* SEMI  */
+    LE = 280,                      /* LE  */
+    GT = 281,                      /* GT  */
+    EQ = 282,                      /* EQ  */
+    OR = 283,                      /* OR  */
+    COMMA = 284,                   /* COMMA  */
+    INCR = 285                     /* INCR  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
-/* Token kinds.  */
-#define YYEMPTY -2
-#define YYEOF 0
-#define YYerror 256
-#define YYUNDEF 257
-#define NUMBER 258
-#define IDENTIFIER 259
-#define INT 260
-#define RETURN 261
-#define PRINTF 262
-#define MAIN 263
-#define LBRACE 264
-#define RBRACE 265
-#define SEMICOLON 266
-#define ASSIGN 267
-#define PLUS 268
-#define MULTIPLY 269
-#define LPAREN 270
-#define RPAREN 271
-#define QUOTE 272
-#define NEWLINE 273
-#define PERCENT 274
-#define D 275
-#define PREPROCESSOR_DIRECTIVE 276
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 10 "parser.y"
+#line 23 "parser.y"
 
-    int num;        // For numbers
-    char* id;       // For identifiers
+    char* str;
 
-#line 114 "y.tab.h"
+#line 98 "parser.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;
@@ -125,4 +109,4 @@ extern YYSTYPE yylval;
 int yyparse (void);
 
 
-#endif /* !YY_YY_Y_TAB_H_INCLUDED  */
+#endif /* !YY_YY_PARSER_TAB_H_INCLUDED  */
